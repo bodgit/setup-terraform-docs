@@ -1,0 +1,14 @@
+name: 'Setup Terraform Docs'
+description: 'Sets up terraform-docs in your GitHub Actions workflow'
+inputs:
+  terraform_docs_version:
+    description: Terraform Docs version to install
+    required: false
+    default: latest
+  github_token:
+    description: GitHub token - used when getting the latest version of terraform-docs
+    required: false
+    default: ${{ github.token }}
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
